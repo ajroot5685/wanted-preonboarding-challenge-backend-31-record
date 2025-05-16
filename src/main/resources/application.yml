@@ -7,9 +7,9 @@ spring:
     property-naming-strategy: SNAKE_CASE
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/cqrs
-    username: postgres
-    password: 1234
+    url: jdbc:postgresql://localhost:5432/challenge
+    username: challenge_user
+    password: challenge1234
     driver-class-name: org.postgresql.Driver
 
   jpa:

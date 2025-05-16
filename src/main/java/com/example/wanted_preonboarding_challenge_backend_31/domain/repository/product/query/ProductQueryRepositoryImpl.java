@@ -81,6 +81,7 @@ public class ProductQueryRepositoryImpl extends QuerydslRepositorySupport implem
         );
 
         return select(select)
+                .distinct()
                 .from(product)
                 .join(productPrice).on(productPrice.product.id.eq(product.id))
                 .leftJoin(productImage).on(productImage.product.id.eq(product.id)
@@ -97,7 +98,7 @@ public class ProductQueryRepositoryImpl extends QuerydslRepositorySupport implem
 
     @Override
     public PaginationRes countSearchProducts(PaginationReq paginationReq, ProductSearchReq req) {
-        Long totalItems = select(product.count())
+        Long totalItems = select(product.id.countDistinct())
                 .from(product)
                 .join(productPrice).on(productPrice.product.id.eq(product.id))
                 .join(brand).on(brand.id.eq(product.brand.id))

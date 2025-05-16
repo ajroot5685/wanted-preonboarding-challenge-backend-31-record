@@ -120,3 +120,5 @@ gradle-app.setting
 
 .DS_Store
 src/main/generated/**
+
+debezium-libs/debezium-scripting-2.7.3.Final.jar
